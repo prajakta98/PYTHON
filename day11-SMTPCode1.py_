@@ -1,0 +1,33 @@
+#import smtplib--->it is mail protocol
+#server=smt.SMTP('smtp.gmail.com',587)
+#server.login("YOUR EMAIL ADDRESS","YOUR PASSWORD")
+#msg="YOUR MESSAGE!"--->subject
+#server.sendmail("YOUR EMAIL ADDRESS","THE EMAIL ADDRESS TO SEND TO","msg")
+#server.quit()
+#import smtplib
+#server=smtplib.SMTP('smtp.gmail.com',587)
+#server.starttls()
+#server.login("praju.lonkar@gmail.com","Pr@ju2684")
+#msg="HELLOOOO"
+#server.sendmail("praju.lonkar@gmail.com","praju.lonkar@gmail.com",msg)
+#server.quit()
+
+
+
+import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
+fromaddr="praju.lonkar@gmail.com"
+toaddr="praju.lonkar@gmail.com"
+msg=MIMEMultipart()
+msg['From']=fromaddr
+msg['To']=toaddr
+msg['Subject']="PYTHON"
+body="HELLOOOOO"
+msg.attach(MIMEText(body,'plain'))
+sever=smtplib.SMTP('smtp.gmail.com',587)
+server.starttls()
+server.login(fromaddr,"Pr@JU2684")
+text=msg.as_string()
+server.sendmail(fromaddr,toaddr,text)
+server.quit()

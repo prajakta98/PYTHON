@@ -1,0 +1,27 @@
+#import smtplib
+#from email.mime.multipart import MIMEMultipart
+#from email.mime.text import MIMEText
+#fromaddr="praju.lonkar@gmail.com"
+#toaddr="praju.lonkar@gmail.com"
+#msg=MIMEMultipart()
+#msg['From']=fromaddr
+#msg['To']=toaddr
+#msg['Subject']="PYTHON"
+#body="HELLOOOOO"
+#msg.attach(MIMEText(body,'plain'))
+#server=smtplib.SMTP('smtp.gmail.com',587)
+#server.starttls()
+#server.login(fromaddr,"Pr@ju2684")
+#text=msg.as_string()
+#server.sendmail(fromaddr,toaddr,text)
+#server.quit()
+
+
+import smtplib
+server=smtplib.SMTP('smtp.gmail.com',587)
+server.starttls()
+server.login("praju.lonkar@gmail.com","Pr@ju2684")
+recieverList=["praju.lonkar@gmail.com","prashastyadav@gmail.com"]
+msg="HELLOOOO!"
+server.sendmail("praju.lonkar@gmail.com",recieverList,msg)
+server.quit()
